@@ -9,11 +9,9 @@ TsGeo can be used in [TypeScript](https://www.typescriptlang.org/) project, in p
 
 The TsGeo project is based on [phpgeo](https://github.com/mjaschen/phpgeo) of [mjaschen](https://github.com/mjaschen).
 
-- [Requirements](#requirements)
 - [Documentation](#documentation)
 - [Installation](#installation)
 - [Features](#features)
-- [License](#license)
 - [Examples/Usage](#examplesusage)
   - [Distance between two coordinates \(Vincenty's Formula\)](#distance-between-two-coordinates-vincentys-formula)
   - [Simplifying a polyline](#simplifying-a-polyline)
@@ -23,6 +21,7 @@ The TsGeo project is based on [phpgeo](https://github.com/mjaschen/phpgeo) of [m
     - [Degrees/Minutes/Seconds \(DMS\)](#degreesminutesseconds-dms)
     - [GeoJSON](#geojson)
 - [Credits](#credits)
+- [License](#license)
 
 
 ## Documentation
@@ -75,7 +74,7 @@ Use the calculator object directly:
 import {Coordinate} from "tsgeo/Coordinate";
 import {Vincenty}   from "tsgeo/Distance/Vincenty";
 
-//In method of class
+/* Add the following in a method of TS class */
 
 let coordinate1 = new Coordinate(19.820664, -155.468066); // Mauna Kea Summit
 let coordinate2 = new Coordinate(20.709722, -156.253333); // Haleakala Summit
@@ -91,7 +90,7 @@ or call the `getDistance()` method of a Coordinate object by injecting a calcula
 import {Coordinate} from "tsgeo/Coordinate";
 import {Vincenty}   from "tsgeo/Distance/Vincenty";
 
-//In method of class
+/* Add the following in a method of TS class */
 
 let coordinate1 = new Coordinate(19.820664, -155.468066); // Mauna Kea Summit
 let coordinate2 = new Coordinate(20.709722, -156.253333); // Haleakala Summit
@@ -108,7 +107,7 @@ import {Coordinate} from "tsgeo/Coordinate";
 import {Polyline}   from "tsgeo/Polyline";
 import {Vincenty}   from "tsgeo/Distance/Vincenty";
 
-//In method of class
+/* Add the following in a method of TS class */
 
 let polyline = new Polyline();
 polyline.addPoint(new Coordinate(10.0, 10.0));
@@ -138,7 +137,7 @@ A polygon consists of at least three points. Points are instances of the `Coordi
 import {Coordinate} from "tsgeo/Coordinate";
 import {Polygon}   from "tsgeo/Polygon";
 
-//In method of class
+/* Add the following in a method of TS class */
 
 let geofence = new Polygon();
 
@@ -165,7 +164,7 @@ You can format a coordinate in different styles.
 import {Coordinate}     from "tsgeo/Coordinate";
 import {DecimalDegrees} from "tsgeo/Formatter/Coordinate/DecimalDegrees";
 
-//In method of class
+/* Add the following in a method of TS class */
 
 let coordinate = new Coordinate(19.820664, -155.468066); // Mauna Kea Summit
 
@@ -179,7 +178,7 @@ console.log(coordinate.format(new DecimalDegrees()));
 import {Coordinate} from "tsgeo/Coordinate";
 import {DMS}        from "tsgeo/Formatter/Coordinate/DMS";
 
-//In method of class
+/* Add the following in a method of TS class */
 
 let coordinate = new Coordinate(18.911306, -155.678268); // South Point, HI, USA
 
@@ -201,7 +200,7 @@ console.log(coordinate.format($formatter)); // 18° 54' 41" N, 155° 40' 42" W
 import {Coordinate} from "tsgeo/Coordinate";
 import {GeoJSON}    from "tsgeo/Formatter/Coordinate/GeoJSON";
 
-//In method of class
+/* Add the following in a method of TS class */
 
 let coordinate = new Coordinate(18.911306, -155.678268); // South Point, HI, USA
 
