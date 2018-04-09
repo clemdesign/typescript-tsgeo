@@ -114,7 +114,7 @@ polyline.addPoint(new Coordinate(10.0, 10.0));
 polyline.addPoint(new Coordinate(20.0, 20.0));
 polyline.addPoint(new Coordinate(30.0, 10.0));
 
-let processor = new Simplify($polyline);
+let processor = new Simplify(polyline);
 
 // remove all points which perpendicular distance is less
 // than 1500 km from the surrounding points.
@@ -184,13 +184,13 @@ let coordinate = new Coordinate(18.911306, -155.678268); // South Point, HI, USA
 
 let formatter = new DMS();
 
-console.log(coordinate.format($formatter)); // 18° 54′ 41″ -155° 40′ 42″
+console.log(coordinate.format(formatter)); // 18° 54′ 41″ -155° 40′ 42″
 
 formatter.setSeparator(", ")
     .useCardinalLetters(true)
     .setUnits(DMS.UNITS_ASCII);
 
-console.log(coordinate.format($formatter)); // 18° 54' 41" N, 155° 40' 42" W
+console.log(coordinate.format(formatter)); // 18° 54' 41" N, 155° 40' 42" W
 ```
 
 #### GeoJSON
