@@ -2,12 +2,12 @@
 
 TsGeo provides abstractions to geographical coordinates (including support for different ellipsoids) and allows you to calculate geographical distances between coordinates with high precision.
 
-TsGeo can be used in [TypeScript](https://www.typescriptlang.org/) project, in particular application under:
+This library can be used in [TypeScript](https://www.typescriptlang.org/) project, for instance application under:
 - [Angular](https://angular.io/)
 - [Ionic](https://ionicframework.com)
 - ...
 
-The TsGeo project is based on [phpgeo](https://github.com/mjaschen/phpgeo) of [mjaschen](https://github.com/mjaschen).
+This project is an adaptation of [phpgeo](https://github.com/mjaschen/phpgeo) of [mjaschen](https://github.com/mjaschen).
 
 - [Documentation](#documentation)
 - [Installation](#installation)
