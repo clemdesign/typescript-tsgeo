@@ -68,14 +68,14 @@ export class DMS implements FormatterInterface {
     let latDegrees = Math.trunc(latValue);
 
     let latMinutesDecimal = latValue - latDegrees;
-    let latMinutes        = 60 * latMinutesDecimal;
+    let latMinutes        = Math.trunc(60 * latMinutesDecimal);
     let latSeconds        = 60 * (60 * latMinutesDecimal - latMinutes);
 
     let lngValue   = Math.abs(lng);
     let lngDegrees = Math.trunc(lngValue);
 
     let lngMinutesDecimal = lngValue - lngDegrees;
-    let lngMinutes        = 60 * lngMinutesDecimal;
+    let lngMinutes        = Math.trunc(60 * lngMinutesDecimal);
     let lngSeconds        = 60 * (60 * lngMinutesDecimal - lngMinutes);
 
     return this.getLatPrefix(lat) +
