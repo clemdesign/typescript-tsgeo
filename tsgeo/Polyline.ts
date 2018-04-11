@@ -82,15 +82,19 @@ export class Polyline implements GeometryInterface {
   getSegments(): Array<Line> {
     let segments = [];
 
-    if (this.points.length <= 1) {
+    if (this.points.length < 2) {
       return segments;
     }
 
     let previousPoint = this.points[0];
 
+    let passLoop = true;
     for (let point of this.points) {
+      if (!passLoop) {
       segments.push(new Line(previousPoint, point));
       previousPoint = point;
+    }
+      passLoop = false;
     }
 
     return segments;
