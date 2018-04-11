@@ -19,7 +19,7 @@ export class Vincenty implements DistanceInterface {
    * @return number|null
    */
   getDistance(point1: Coordinate, point2: Coordinate): number | null {
-    if (point1.getEllipsoid().getName() != point2.getEllipsoid().getName()) {
+    if (point1.getEllipsoid().getName() !== point2.getEllipsoid().getName()) {
       return null;
     }
 
