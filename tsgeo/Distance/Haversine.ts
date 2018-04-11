@@ -19,8 +19,8 @@ export class Haversine implements DistanceInterface {
    * @return number|null
    */
   getDistance(point1: Coordinate, point2: Coordinate): number | null {
-    if (point1.getEllipsoid() != point2.getEllipsoid()) {
-      return null
+    if (point1.getEllipsoid().getName() !== point2.getEllipsoid().getName()) {
+      return null;
     }
 
     let lat1 = MathMore.deg2rad(point1.getLat());
