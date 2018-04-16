@@ -2,7 +2,8 @@
   "name": "tsgeo",
   "description": "TsGeo provides abstractions to geographical coordinates (including support for different ellipsoids) and allows you to calculate geographical distances between coordinates with high precision.",
   "version": "1.2.0",
-  "main": "index.d.ts",
+  "main": "dist/index.js",
+  "types" : "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
