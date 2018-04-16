@@ -80,7 +80,7 @@ export class Polyline implements GeometryInterface {
    * @return array
    */
   getSegments(): Array<Line> {
-    let segments = [];
+    let segments: Array<Line> = [];
 
     if (this.points.length < 2) {
       return segments;

@@ -17,19 +17,19 @@ export class DMS implements FormatterInterface {
   /**
    * @var string Separator string between latitude and longitude
    */
-  protected separator;
+  protected separator: string = ' ';
 
   /**
    * Use cardinal letters for N/S and W/E instead of minus sign
    *
    * @var boolean
    */
-  protected cardinalLetters;
+  protected cardinalLetters: boolean = false;
 
   /**
    * @var string
    */
-  protected unitType;
+  protected unitType: string = DMS.UNITS_UTF8;
 
   /**
    * @var array
@@ -78,22 +78,24 @@ export class DMS implements FormatterInterface {
     let lngMinutes        = Math.trunc(60 * lngMinutesDecimal);
     let lngSeconds        = 60 * (60 * lngMinutesDecimal - lngMinutes);
 
+    const units = (this.units as any)[this.unitType];
+
     return this.getLatPrefix(lat) +
       StringMore.pad(Math.abs(latDegrees),2) +
-      this.units[this.unitType]['deg'] + " " +
+     units['deg'] + " " +
       StringMore.pad(latMinutes, 2) +
-      this.units[this.unitType]['min'] + " " +
+     units['min'] + " " +
       StringMore.pad(Math.round(latSeconds), 2) +
-      this.units[this.unitType]['sec'] +
+     units['sec'] +
       this.getLatSuffix(lat) +
       this.separator +
       this.getLngPrefix(lng) +
       StringMore.pad(Math.abs(lngDegrees), 3) +
-      this.units[this.unitType]['deg'] + " " +
+     units['deg'] + " " +
       StringMore.pad(lngMinutes, 2) +
-      this.units[this.unitType]['min'] + " " +
+     units['min'] + " " +
       StringMore.pad(Math.round(lngSeconds), 2) +
-      this.units[this.unitType]['sec'] +
+     units['sec'] +
       this.getLngSuffix(lng);
   }
 

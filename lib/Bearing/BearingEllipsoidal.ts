@@ -28,7 +28,11 @@ export class BearingSpherical implements BearingInterface {
    * @returns {number} Bearing Angle
    */
   calculateBearing(point1: Coordinate, point2: Coordinate): number {
-    return this.inverseVincenty(point1, point2).getBearingInitial();
+    let inverseVincenty = this.inverseVincenty(point1, point2);
+
+    if(inverseVincenty === null) return -999;
+
+    return inverseVincenty.getBearingInitial();
   }
 
   /**
@@ -39,7 +43,11 @@ export class BearingSpherical implements BearingInterface {
    * @returns {number}
    */
   calculateFinalBearing(point1: Coordinate, point2: Coordinate): number {
-    return this.inverseVincenty(point1, point2).getBearingFinal();
+    let inverseVincenty = this.inverseVincenty(point1, point2);
+
+    if(inverseVincenty === null) return -999;
+
+    return inverseVincenty.getBearingFinal();
   }
 
   /**
@@ -129,7 +137,12 @@ export class BearingSpherical implements BearingInterface {
     );
   }
 
-  private inverseVincenty(point1: Coordinate, point2: Coordinate): InverseVincentyBearing {
+  private inverseVincenty(point1: Coordinate | null, point2: Coordinate | null): InverseVincentyBearing | null {
+
+    if((point1 === null) || (point2 === null)){
+      return null;
+    }
+
     let phi1 = MathMore.deg2rad(point1.getLat());
     let phi2 = MathMore.deg2rad(point2.getLat());
     let lambda1 = MathMore.deg2rad(point1.getLng());

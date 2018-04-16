@@ -1,0 +1,102 @@
+"use strict";
+/**
+ * Coordinate Implementation
+ *
+ * @author    clemdesign <contact@clemdesign.fr>
+ * @license   https://opensource.org/licenses/MIT
+ * @link
+  */
+Object.defineProperty(exports, "__esModule", { value: true });
+const Ellipsoid_1 = require("./Ellipsoid");
+class Coordinate {
+    /**
+     * @param {number} lat -90.0 .. +90.0
+     * @param {number} lng -180.0 .. +180.0
+     * @param {Ellipsoid} ellipsoid if omitted, WGS-84 is used
+     */
+    constructor(lat, lng, ellipsoid = null) {
+        this.lat = lat;
+        this.lng = lng;
+        if (ellipsoid !== null) {
+            this.ellipsoid = ellipsoid;
+        }
+        else {
+            this.ellipsoid = Ellipsoid_1.Ellipsoid.createDefault();
+        }
+    }
+    /**
+     * @returns {number}
+     */
+    getLat() {
+        return this.lat;
+    }
+    /**
+     * @returns {number}
+     */
+    getLng() {
+        return this.lng;
+    }
+    /**
+     * Returns an array containing the point
+     *
+     * @returns {Array<this>}
+     */
+    getPoints() {
+        return [this];
+    }
+    /**
+     * @returns {Ellipsoid}
+     */
+    getEllipsoid() {
+        return this.ellipsoid;
+    }
+    /**
+     * Calculates the distance between the given coordinate
+     * and this coordinate.
+     *
+     * @param {Coordinate} coordinate
+     * @param {DistanceInterface} calculator instance of distance calculation class
+     * @returns {number}
+     */
+    getDistance(coordinate, calculator) {
+        return calculator.getDistance(this, coordinate);
+    }
+    /**
+     * @param {FormatterInterface} formatter
+     * @returns {string}
+     */
+    format(formatter) {
+        return formatter.format(this);
+    }
+    /**
+     * Validates latitude
+     *
+     * @param {number} latitude
+     * @returns {boolean}
+     */
+    static isValidLatitude(latitude) {
+        return Coordinate.isNumericInBounds(latitude, -90.0, 90.0);
+    }
+    /**
+     * Validates longitude
+     *
+     * @param {number} longitude
+     * @returns {boolean}
+     */
+    static isValidLongitude(longitude) {
+        return Coordinate.isNumericInBounds(longitude, -180.0, 180.0);
+    }
+    /**
+     * Checks if the given value is between lower
+     * and upper bounds (including the bounds values).
+     *
+     * @param {number} value
+     * @param {number} lower
+     * @param {number} upper
+     * @returns {boolean}
+     */
+    static isNumericInBounds(value, lower, upper) {
+        return !(value < lower || value > upper);
+    }
+}
+exports.Coordinate = Coordinate;

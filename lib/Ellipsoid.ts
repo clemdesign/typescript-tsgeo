@@ -52,7 +52,7 @@ export class Ellipsoid {
    * @param config
    * @returns {Ellipsoid}
    */
-  static createFromArray(config): Ellipsoid {
+  static createFromArray(config: any): Ellipsoid {
     return new this(config['name'], config['a'], config['f']);
   }
 
@@ -61,7 +61,8 @@ export class Ellipsoid {
    * @returns {Ellipsoid}
    */
   static createDefault(name = 'WGS-84'): Ellipsoid {
-    return Ellipsoid.createFromArray(Ellipsoid.configs[name]);
+    const config = (Ellipsoid.configs as any)[name];
+    return Ellipsoid.createFromArray(config);
   }
 
   /**

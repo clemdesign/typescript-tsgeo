@@ -15,12 +15,12 @@ export class Line implements GeometryInterface {
   /**
    * @var Coordinate
    */
-  protected point1;
+  protected point1: Coordinate;
 
   /**
    * @var Coordinate
    */
-  protected point2;
+  protected point2: Coordinate;
 
   /**
    * @param {Coordinate} point1

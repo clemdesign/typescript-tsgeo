@@ -72,7 +72,7 @@ export class StringMore {
     let prec = !isFinite(+decimals) ? 0 : Math.abs(decimals);
     let sep = (typeof thousandsSep === 'undefined') ? ',' : thousandsSep;
     let dec = (typeof decPoint === 'undefined') ? '.' : decPoint;
-    let toFixedFix = function (n, prec) {
+    let toFixedFix = function (n: number, prec: number): string {
       let k = Math.pow(10, prec);
       return '' + (Math.round(n * k) / k)
         .toFixed(prec);

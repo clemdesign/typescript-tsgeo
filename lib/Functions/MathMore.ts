@@ -86,8 +86,10 @@ export class MathMore {
     let l = 0.0;
     let l2 = 0.0;
     tmp = x.toExponential().match(/^.\.?(.*)e(.+)$/);
+    if(tmp === null){ return 0; }
     p = parseInt(tmp[2], 10) - (tmp[1] + '').length;
     tmp = y.toExponential().match(/^.\.?(.*)e(.+)$/);
+    if(tmp === null){ return 0; }
     pY = parseInt(tmp[2], 10) - (tmp[1] + '').length;
     if (pY > p) {
       p = pY

@@ -13,12 +13,12 @@ export class Bounds {
   /**
    * @var Coordinate
    */
-  protected northWest;
+  protected northWest: Coordinate;
 
   /**
    * @var Coordinate
    */
-  protected southEast;
+  protected southEast: Coordinate;
 
   /**
    *

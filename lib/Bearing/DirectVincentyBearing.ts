@@ -12,12 +12,12 @@ export class DirectVincentyBearing {
   /**
    * @var {Coordinate}
    */
-  private destination;
+  private destination: Coordinate;
 
   /**
    * @var {number}
    */
-  private bearingFinal;
+  private bearingFinal: number;
 
   /**
    * Bearing constructor.

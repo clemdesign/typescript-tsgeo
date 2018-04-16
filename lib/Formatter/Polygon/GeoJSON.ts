@@ -18,7 +18,7 @@ export class GeoJSON implements FormatterInterface {
   format(polygon: Polygon): string {
 
     if(polygon.getNumberOfPoints() < 3){
-      return null;
+      return "";
     }
 
     let points = [];

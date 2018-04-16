@@ -31,7 +31,19 @@ This project is based on [phpgeo](https://github.com/mjaschen/phpgeo) so to know
 
 ## Installation
 
-To install this library, just download the zip version of this repository and unzip `tsgeo` sub-directory in your application project. 
+Installing the **TsGeo** library plugin can be done in one of two ways. NPM installation method enables you to quickly and easily install the library with a simple terminal command, while the manual method enables you to do so via a zip file.
+
+### NPM Installation (Preferred)
+
+The simplest way to install this library is via the package manager (NPM) through your system's Terminal (also called the command line). From the root of your project install type:
+
+    npm install tsgeo
+
+This will install the TsGeo library into your `/node_modules/tsgeo` directy within your project.
+
+### Manual Installation
+
+To install this library, just download the zip version of this repository and unzip content in your application project. 
 
 ## Features
 
@@ -39,26 +51,16 @@ To install this library, just download the zip version of this repository and un
 
 TsGeo provides the following features (follow the links for examples):
 
-- abstractions of several geometry objects ([coordinate/point](https://phpgeo.marcusjaschen.de/geometry/coordinate/),
-  [line](https://phpgeo.marcusjaschen.de/geometry/line/),
-  [polyline/GPS track](https://phpgeo.marcusjaschen.de/geometry/polyline/),
-  [polygon](https://phpgeo.marcusjaschen.de/geometry/polygon/)
-- support for different [ellipsoids](https://phpgeo.marcusjaschen.de/geometry/ellipsoid/), e. g. WGS-84
-- [length/distance/perimeter calculations](https://phpgeo.marcusjaschen.de/calculations/distance/)
-  with different implementations (Haversine, Vincenty)
-- [Geofence](https://phpgeo.marcusjaschen.de/calculations/geofence/) calculation,
-  i. e. answering the question "Is this point contained in that area/polygon?"
-- [formatting and output](https://phpgeo.marcusjaschen.de/formatting/) of geometry objects
-  (GeoJSON, nice strings, e. g. `18° 54′ 41″ -155° 40′ 42″`)
-- calculation of [bearing angle between two points](https://phpgeo.marcusjaschen.de/calculations/bearing/#bearing-between-two-points)
-  (spherical or with Vincenty's formula)
-- calculation of a [destination point for a given starting point](https://phpgeo.marcusjaschen.de/calculations/bearing/#destination-point-for-given-bearing-and-distance),
+- abstractions of several geometry objects (coordinate/point, line, polyline/GPS track, polygon.
+- support for different ellipsoids, e. g. WGS-84
+- length/distance/perimeter calculations with different implementations (Haversine, Vincenty)
+- Geofence calculation,  i. e. answering the question "Is this point contained in that area/polygon?"
+- formatting and output of geometry objects (GeoJSON, nice strings, e. g. `18° 54′ 41″ -155° 40′ 42″`)
+- calculation of a destination point for a given starting point,
   bearing angle, and distance (spherical or with Vincenty's formula)
-- calculation of the [perpendicular distance between a point and a line](https://phpgeo.marcusjaschen.de/#_perpendicular_distance)
-- getting segments of a [polyline](https://phpgeo.marcusjaschen.de/geometry/polyline/#segments)
-  /[polygon](https://phpgeo.marcusjaschen.de/geometry/polygon/#segments),
-- [reversing direction](https://phpgeo.marcusjaschen.de/geometry/polyline/#reverse-direction)
-  of polyline/polygon
+- calculation of the perpendicular distance between a point and a line
+- getting segments of a polyline/polygon.
+- reversing direction of polyline/polygon.
 
 ## Examples/Usage
 

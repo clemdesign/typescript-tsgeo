@@ -17,19 +17,19 @@ export class DecimalMinutes implements FormatterInterface {
   /**
    * @var string Separator string between latitude and longitude
    */
-  protected separator;
+  protected separator:string = ' ';
 
   /**
    * Use cardinal letters for N/S and W/E instead of minus sign
    *
    * @var boolean
    */
-  protected cardinalLetters;
+  protected cardinalLetters: boolean = false;
 
   /**
    * @var string
    */
-  protected unitType;
+  protected unitType: string = DecimalMinutes.UNITS_UTF8;
 
   /**
    * @type {number}
@@ -84,18 +84,20 @@ export class DecimalMinutes implements FormatterInterface {
     let lngMinutesDecimal = lngValue - lngDegrees;
     let lngMinutes        = 60 * lngMinutesDecimal;
 
+    const units = (this.units as any)[this.unitType];
+
     return this.getLatPrefix(lat) +
       StringMore.pad(Math.abs(latDegrees),2) +
-      this.units[this.unitType]['deg'] + " " +
+      units['deg'] + " " +
       StringMore.number_format(latMinutes, this.digits, this.decimalPoint, this.decimalPoint) +
-      this.units[this.unitType]['min'] +
+      units['min'] +
       this.getLatSuffix(lat) +
       this.separator +
       this.getLngPrefix(lng) +
       StringMore.pad(Math.abs(lngDegrees), 3) +
-      this.units[this.unitType]['deg'] + " " +
+      units['deg'] + " " +
       StringMore.number_format(lngMinutes, this.digits, this.decimalPoint, this.decimalPoint) +
-      this.units[this.unitType]['min'] +
+      units['min'] +
       this.getLngSuffix(lng);
   }
 

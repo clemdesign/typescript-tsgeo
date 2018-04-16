@@ -4,6 +4,7 @@
   "version": "1.2.0",
   "main": "index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/clemdesign/typescript-tsgeo/issues"
   },
-  "homepage": "https://github.com/clemdesign/typescript-tsgeo"
+  "homepage": "https://github.com/clemdesign/typescript-tsgeo",
+  "devDependencies": {
+    "typescript": "^2.5.3"
+  }
 }

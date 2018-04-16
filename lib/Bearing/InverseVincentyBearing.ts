@@ -11,17 +11,17 @@ export class InverseVincentyBearing
   /**
    * @var {number}
    */
-  private distance;
+  private distance: number;
 
   /**
    * @var {number}
    */
-  private bearingInitial;
+  private bearingInitial: number;
 
   /**
    * @var {number}
    */
-  private bearingFinal;
+  private bearingFinal: number;
 
   /**
    * Bearing constructor.

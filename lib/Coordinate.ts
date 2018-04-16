@@ -24,7 +24,7 @@ export class Coordinate implements GeometryInterface {
    * @param {number} lng -180.0 .. +180.0
    * @param {Ellipsoid} ellipsoid if omitted, WGS-84 is used
    */
-  constructor(lat: number, lng: number, ellipsoid: Ellipsoid = null) {
+  constructor(lat: number, lng: number, ellipsoid: Ellipsoid | null = null) {
     this.lat = lat;
     this.lng = lng;
 

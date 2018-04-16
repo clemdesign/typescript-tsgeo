@@ -14,7 +14,7 @@ export class DecimalDegrees implements FormatterInterface {
   /**
    * @var string Separator string between latitude and longitude
    */
-  protected separator;
+  protected separator: string = ' ';
 
   /**
    * @type {number}
