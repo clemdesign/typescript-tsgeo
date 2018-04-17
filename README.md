@@ -43,7 +43,7 @@ This will install the TsGeo library into your `/node_modules/tsgeo` directy with
 
 ### Manual Installation
 
-To install this library, just download the zip version of this repository and unzip content in your application project. 
+To install this library, just download the zip version of this repository and unzip the content of `/src` sub-directory in your application project. 
 
 ## Features
 
